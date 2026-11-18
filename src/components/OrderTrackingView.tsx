@@ -30,6 +30,8 @@ interface OrderTrackingViewProps {
   orders: Order[];
   initialTrackingCode?: string | null;
   myOrderCodes?: string[];
+  ownerWhatsAppNumber?: string;
+  onOpenSupport?: (prefillMessage: string, topic?: string) => void;
   onReorderItems?: (items: CartItem[]) => void;
 }
 
@@ -46,6 +48,8 @@ export function OrderTrackingView({
   orders,
   initialTrackingCode,
   myOrderCodes = [],
+  ownerWhatsAppNumber,
+  onOpenSupport,
   onReorderItems,
 }: OrderTrackingViewProps) {
   const [query, setQuery] = useState(initialTrackingCode || '');
@@ -565,22 +569,48 @@ export function OrderTrackingView({
                   Need Order Support?
                 </h3>
               </div>
-              <p className="text-xs text-zinc-600 leading-relaxed">
-                Message the studio owner directly on WhatsApp with your tracking
-                ID pre-filled.
-              </p>
-              <a
-                href={buildWhatsAppUrl(
-                  `Hi Kroma Press, I'm checking on order ${activeOrder.trackingCode} (${ORDER_STATUS_LABELS[activeOrder.status]}).`,
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full h-10 inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803D] text-white text-xs font-semibold rounded-lg transition-colors"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Owner ({activeOrder.trackingCode})</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              {(() => {
+                const msg = `Hi Kroma Press, I'm checking on order ${activeOrder.trackingCode} (${ORDER_STATUS_LABELS[activeOrder.status]}).`;
+                const waUrl = buildWhatsAppUrl(msg, ownerWhatsAppNumber);
+                if (waUrl) {
+                  return (
+                    <>
+                      <p className="text-xs text-zinc-600 leading-relaxed">
+                        Message the studio owner directly on WhatsApp with your
+                        tracking ID pre-filled.
+                      </p>
+                      <a
+                        href={waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full h-10 inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803D] text-white text-xs font-semibold rounded-lg transition-colors"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        <span>WhatsApp Owner ({activeOrder.trackingCode})</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </>
+                  );
+                }
+                return (
+                  <>
+                    <p className="text-xs text-zinc-600 leading-relaxed">
+                      Send a demo support inquiry about {activeOrder.trackingCode}{' '}
+                      directly to the Admin Portal inbox.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onOpenSupport?.(msg, 'Order Delivery & Tracking')
+                      }
+                      className="w-full h-10 inline-flex items-center justify-center gap-2 bg-[#16A34A] hover:bg-[#15803D] text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Demo Support ({activeOrder.trackingCode})</span>
+                    </button>
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>

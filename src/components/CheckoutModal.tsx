@@ -421,9 +421,14 @@ export function CheckoutModal({
 
                 {/* Payment Method */}
                 <div className="pt-4 border-t border-zinc-200">
-                  <h3 className="text-sm font-bold text-zinc-950 mb-3">
-                    03. Payment Method
-                  </h3>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <h3 className="text-sm font-bold text-zinc-950">
+                      03. Payment Method (Demo)
+                    </h3>
+                    <span className="text-[11px] font-mono text-zinc-500">
+                      Test mode · No real card charged
+                    </span>
+                  </div>
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {(
                       [

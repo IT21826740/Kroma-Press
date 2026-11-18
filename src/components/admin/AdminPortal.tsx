@@ -13,6 +13,7 @@ import {
   Plus,
   RefreshCw,
   Search,
+  Settings,
   Shirt,
   ShoppingBag,
   Sparkles,
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react';
 import {
   ALL_SIZES,
+  type DemoInquiry,
   type InventoryLog,
   type Order,
   ORDER_STATUS_LABELS,
@@ -29,6 +31,7 @@ import {
   type Product,
   type ProductCategory,
   type ProductReview,
+  type StoreSettings,
 } from '../../shared/types';
 import {InventoryDashboard} from '../InventoryDashboard';
 import {ResilientImage} from '../ResilientImage';
@@ -39,13 +42,18 @@ export type AdminSection =
   | 'orders'
   | 'inventory'
   | 'products'
-  | 'reviews';
+  | 'reviews'
+  | 'settings';
 
 interface AdminPortalProps {
   products: Product[];
   orders: Order[];
   logs: InventoryLog[];
   reviews: ProductReview[];
+  storeSettings: StoreSettings;
+  demoInquiries: DemoInquiry[];
+  onUpdateStoreSettings: (settings: StoreSettings) => void;
+  onClearDemoInquiries: () => void;
   onExitAdmin: () => void;
   onRefreshAll: () => void;
   onUpdateData: (data: {
@@ -107,6 +115,10 @@ const SECTION_META: Record<AdminSection, {title: string; subtitle: string}> = {
     title: 'Review Moderation',
     subtitle: 'Inspect verified buyer ratings, customer photos, and moderate submissions',
   },
+  settings: {
+    title: 'Demo & Store Settings',
+    subtitle: 'Configure WhatsApp owner contact or run in built-in Demo Mode with inquiry inbox',
+  },
 };
 
 export function AdminPortal({
@@ -114,12 +126,20 @@ export function AdminPortal({
   orders,
   logs,
   reviews,
+  storeSettings,
+  demoInquiries,
+  onUpdateStoreSettings,
+  onClearDemoInquiries,
   onExitAdmin,
   onRefreshAll,
   onUpdateData,
 }: AdminPortalProps) {
   const [section, setSection] = useState<AdminSection>('overview');
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [whatsAppInput, setWhatsAppInput] = useState(
+    storeSettings.ownerWhatsAppNumber,
+  );
+  const [settingsSaved, setSettingsSaved] = useState(false);
 
   // Orders filter & inspection
   const [orderSearch, setOrderSearch] = useState('');
@@ -374,6 +394,12 @@ export function AdminPortal({
       label: 'Reviews',
       icon: MessageSquareText,
       badge: reviews.length,
+    },
+    {
+      id: 'settings',
+      label: 'Demo & Settings',
+      icon: Settings,
+      badge: demoInquiries.length > 0 ? demoInquiries.length : undefined,
     },
   ];
 
@@ -1286,6 +1312,117 @@ export function AdminPortal({
                     No customer reviews match the selected filters.
                   </div>
                 )}
+              </div>
+            </div>
+          )}
+
+          {/* SECTION 6: DEMO & STORE SETTINGS */}
+          {section === 'settings' && (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-6 bg-white border border-[#E4E4E7] rounded-xl p-6 space-y-5">
+                <div>
+                  <h2 className="font-display text-base font-bold text-zinc-950">
+                    WhatsApp Owner Contact Configuration
+                  </h2>
+                  <p className="text-xs text-zinc-600 mt-1 leading-relaxed">
+                    Leave blank to run in <strong className="text-zinc-950">Demo Support Mode</strong> (messages stay safely inside the site without opening external phone numbers). Add your WhatsApp number anytime to enable direct <code className="font-mono">wa.me</code> links.
+                  </p>
+                </div>
+
+                <div className="space-y-2 text-xs">
+                  <label className="block font-semibold text-zinc-800">
+                    Owner WhatsApp Number (optional, country code + digits)
+                  </label>
+                  <input
+                    type="text"
+                    value={whatsAppInput}
+                    onChange={(e) => setWhatsAppInput(e.target.value)}
+                    placeholder="Leave empty for Demo Mode (e.g. 15551234567)"
+                    className="w-full h-10 px-3 font-mono bg-zinc-50 border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-950"
+                  />
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onUpdateStoreSettings({
+                        ownerWhatsAppNumber: whatsAppInput.replace(/\D/g, ''),
+                      });
+                      setSettingsSaved(true);
+                      setTimeout(() => setSettingsSaved(false), 2200);
+                    }}
+                    className="h-10 px-4 bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-semibold rounded-lg cursor-pointer"
+                  >
+                    {settingsSaved ? 'Settings Saved' : 'Save Settings'}
+                  </button>
+                  {whatsAppInput && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setWhatsAppInput('');
+                        onUpdateStoreSettings({ownerWhatsAppNumber: ''});
+                      }}
+                      className="h-10 px-4 border border-zinc-300 hover:bg-zinc-100 text-zinc-800 text-xs font-semibold rounded-lg cursor-pointer"
+                    >
+                      Use Demo Mode
+                    </button>
+                  )}
+                </div>
+
+                <div className="pt-4 border-t border-zinc-200 text-xs text-zinc-600 space-y-1.5">
+                  <p className="font-semibold text-zinc-950">Active Demo Features</p>
+                  <p>· Checkout runs in Test Mode (simulated card, Express Pay &amp; COD — no real charges).</p>
+                  <p>· Promo codes available for testing: <span className="font-mono font-semibold">STUDIO10</span> and <span className="font-mono font-semibold">WELCOME15</span>.</p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6 bg-white border border-[#E4E4E7] rounded-xl overflow-hidden flex flex-col">
+                <div className="px-5 py-4 border-b border-zinc-200 flex items-center justify-between">
+                  <div>
+                    <h2 className="font-display text-base font-bold text-zinc-950">
+                      Demo Customer Support Inbox ({demoInquiries.length})
+                    </h2>
+                    <p className="text-[11px] text-zinc-500">
+                      Messages submitted via the storefront Studio Support widget
+                    </p>
+                  </div>
+                  {demoInquiries.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={onClearDemoInquiries}
+                      className="text-xs text-red-600 hover:underline cursor-pointer"
+                    >
+                      Clear Inbox
+                    </button>
+                  )}
+                </div>
+
+                <div className="divide-y divide-zinc-200 max-h-[360px] overflow-y-auto">
+                  {demoInquiries.map((inq) => (
+                    <div key={inq.id} className="p-4 text-xs space-y-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-zinc-950">
+                          {inq.topic}
+                        </span>
+                        <span className="font-mono text-[11px] text-zinc-400">
+                          {new Date(inq.createdAt).toLocaleString('en-US', {
+                            month: 'short',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}
+                        </span>
+                      </div>
+                      <p className="text-zinc-600 leading-relaxed">{inq.message}</p>
+                    </div>
+                  ))}
+                  {demoInquiries.length === 0 && (
+                    <div className="p-10 text-center text-xs text-zinc-500">
+                      No demo support inquiries yet. Messages sent from the storefront Studio Support widget will appear here.
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           )}

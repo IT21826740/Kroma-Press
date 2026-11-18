@@ -17,17 +17,22 @@ import {WishlistView} from './components/WishlistView';
 import {
   buildWhatsAppUrl,
   type CartItem,
+  type DemoInquiry,
   type GarmentColor,
   type InventoryLog,
   type Order,
+  OWNER_WHATSAPP_NUMBER,
   type Product,
   type ProductReview,
   type SizeCode,
+  type StoreSettings,
 } from './shared/types';
 
 const CART_STORAGE_KEY = 'kroma_press_cart_v1';
 const WISHLIST_STORAGE_KEY = 'kroma_press_wishlist_v1';
 const MY_ORDERS_STORAGE_KEY = 'kroma_press_my_orders_v1';
+const STORE_SETTINGS_STORAGE_KEY = 'kroma_press_store_settings_v1';
+const DEMO_INQUIRIES_STORAGE_KEY = 'kroma_press_demo_inquiries_v1';
 
 type PortalMode = 'customer' | 'admin';
 
@@ -75,6 +80,29 @@ export default function App() {
       return [];
     }
   });
+  const [storeSettings, setStoreSettings] = useState<StoreSettings>(() => {
+    try {
+      const saved = localStorage.getItem(STORE_SETTINGS_STORAGE_KEY);
+      return saved
+        ? (JSON.parse(saved) as StoreSettings)
+        : {ownerWhatsAppNumber: OWNER_WHATSAPP_NUMBER};
+    } catch {
+      return {ownerWhatsAppNumber: OWNER_WHATSAPP_NUMBER};
+    }
+  });
+  const [demoInquiries, setDemoInquiries] = useState<DemoInquiry[]>(() => {
+    try {
+      const saved = localStorage.getItem(DEMO_INQUIRIES_STORAGE_KEY);
+      return saved ? (JSON.parse(saved) as DemoInquiry[]) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [supportPrefill, setSupportPrefill] = useState<{
+    topic?: string;
+    message?: string;
+  }>({});
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [trackCodeTarget, setTrackCodeTarget] = useState<string | null>(null);
@@ -116,6 +144,28 @@ export default function App() {
       // Ignore storage quota errors
     }
   }, [myOrderCodes]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        STORE_SETTINGS_STORAGE_KEY,
+        JSON.stringify(storeSettings),
+      );
+    } catch {
+      // Ignore storage quota errors
+    }
+  }, [storeSettings]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        DEMO_INQUIRIES_STORAGE_KEY,
+        JSON.stringify(demoInquiries),
+      );
+    } catch {
+      // Ignore storage quota errors
+    }
+  }, [demoInquiries]);
 
   const fetchAllData = useCallback(async () => {
     setLoading(true);
@@ -273,7 +323,31 @@ export default function App() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
 
+  const handleOpenSupport = (prefillMessage?: string, topic?: string) => {
+    setSupportPrefill({
+      message: prefillMessage,
+      topic: topic || 'Custom Print Inquiry',
+    });
+    setSupportOpen(true);
+  };
+
+  const handleSendDemoInquiry = (topic: string, message: string) => {
+    setDemoInquiries((prev) => [
+      {
+        id: `inq-${Date.now().toString(36)}`,
+        topic,
+        message,
+        createdAt: new Date().toISOString(),
+      },
+      ...prev,
+    ]);
+  };
+
   const totalBagCount = cart.reduce((sum, i) => sum + i.quantity, 0);
+  const footerWhatsAppHref = buildWhatsAppUrl(
+    'Hi Kroma Press, I would like to chat with the store owner.',
+    storeSettings.ownerWhatsAppNumber,
+  );
 
   if (portalMode === 'admin') {
     return (
@@ -290,6 +364,10 @@ export default function App() {
             orders={orders}
             logs={logs}
             reviews={reviews}
+            storeSettings={storeSettings}
+            demoInquiries={demoInquiries}
+            onUpdateStoreSettings={setStoreSettings}
+            onClearDemoInquiries={() => setDemoInquiries([])}
             onExitAdmin={() => switchPortal('customer')}
             onRefreshAll={fetchAllData}
             onUpdateData={(data) => {
@@ -414,6 +492,8 @@ export default function App() {
                     orders={orders}
                     initialTrackingCode={trackCodeTarget}
                     myOrderCodes={myOrderCodes}
+                    ownerWhatsAppNumber={storeSettings.ownerWhatsAppNumber}
+                    onOpenSupport={handleOpenSupport}
                     onReorderItems={handleReorderItems}
                   />
                 )}
@@ -484,16 +564,24 @@ export default function App() {
               >
                 Orders &amp; Tracking
               </button>
-              <a
-                href={buildWhatsAppUrl(
-                  'Hi Kroma Press, I would like to chat with the store owner.',
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-[#15803D] hover:underline whitespace-nowrap"
-              >
-                WhatsApp Owner
-              </a>
+              {footerWhatsAppHref ? (
+                <a
+                  href={footerWhatsAppHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#15803D] hover:underline whitespace-nowrap"
+                >
+                  WhatsApp Owner
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => handleOpenSupport()}
+                  className="font-semibold text-[#15803D] hover:underline cursor-pointer whitespace-nowrap"
+                >
+                  Studio Support
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => switchPortal('admin')}
@@ -544,7 +632,15 @@ export default function App() {
           }}
         />
 
-        <WhatsAppContactWidget />
+        <WhatsAppContactWidget
+          open={supportOpen}
+          onOpenChange={setSupportOpen}
+          prefillTopic={supportPrefill.topic}
+          prefillMessage={supportPrefill.message}
+          ownerWhatsAppNumber={storeSettings.ownerWhatsAppNumber}
+          inquiries={demoInquiries}
+          onSendDemoInquiry={handleSendDemoInquiry}
+        />
       </div>
     </MotionConfig>
   );

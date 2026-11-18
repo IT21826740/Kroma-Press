@@ -215,9 +215,22 @@ export interface ProductReview {
   createdAt: string;
 }
 
-export const OWNER_WHATSAPP_NUMBER = '15035550199';
+export interface StoreSettings {
+  ownerWhatsAppNumber: string;
+}
 
-export function buildWhatsAppUrl(message: string): string {
-  return `https://wa.me/${OWNER_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+export interface DemoInquiry {
+  id: string;
+  topic: string;
+  message: string;
+  createdAt: string;
+}
+
+export const OWNER_WHATSAPP_NUMBER = '';
+
+export function buildWhatsAppUrl(message: string, phoneNumber?: string): string {
+  const digits = (phoneNumber ?? OWNER_WHATSAPP_NUMBER).replace(/\D/g, '');
+  if (!digits) return '';
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
 }
 
