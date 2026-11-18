@@ -1,0 +1,777 @@
+{
+  "products": [
+    {
+      "id": "tee-boxy-obsidian",
+      "sku": "KP-BXY-280",
+      "name": "280 GSM Boxy Architectural Tee",
+      "category": "Heavyweight",
+      "fabricWeight": "280 GSM Combed Ring-Spun",
+      "fit": "Boxy Drop-Shoulder",
+      "price": 48,
+      "description": "Cut from custom-milled 280 GSM organic ring-spun cotton with a thick 1.1-inch ribbed collar and structured boxy drape. Pre-shrunk and enzyme-washed for high-definition DTG and screen print fidelity.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+          "label": "Front Studio Print",
+          "caption": "Sharp architectural linework printed at 1200 DPI on Obsidian Black."
+        },
+        {
+          "url": "/src/assets/images/hero_tshirt_studio_1795015673323.jpg",
+          "label": "Editorial Fit View",
+          "caption": "Relaxed boxy drape with dropped shoulder seams."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Print & Textile Macro",
+          "caption": "Water-based studio pigment cured onto dense 280 GSM combed cotton."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Chalk White",
+          "hex": "#F3F2EE",
+          "textOnHex": "#09090B"
+        },
+        {
+          "name": "Concrete Slate",
+          "hex": "#4B5058",
+          "textOnHex": "#FAFAFA"
+        }
+      ],
+      "stock": {
+        "S": 18,
+        "M": 24,
+        "L": 14,
+        "XL": 6,
+        "2XL": 9
+      },
+      "reorderPoint": 8,
+      "reorderQuantity": 25,
+      "autoRestock": true,
+      "customizable": true,
+      "printMethodDefault": "1200 DPI Water-Based DTG",
+      "specs": [
+        {
+          "label": "Fabric Composition",
+          "value": "100% Organic Ring-Spun Cotton"
+        },
+        {
+          "label": "Weight",
+          "value": "280 GSM / 8.2 oz Heavyweight"
+        },
+        {
+          "label": "Collar Spec",
+          "value": "28mm Double-Needle Ribbed Crew"
+        },
+        {
+          "label": "Shrinkage",
+          "value": "< 1.5% Pre-Shrunk Enzyme Wash"
+        }
+      ]
+    },
+    {
+      "id": "tee-abstract-chalk",
+      "sku": "KP-ABS-260",
+      "name": "Abstract Form Studio Tee",
+      "category": "Graphic Drops",
+      "fabricWeight": "260 GSM Supima Cotton",
+      "fit": "Modern Relaxed",
+      "price": 54,
+      "description": "Limited studio edition pairing vermilion and charcoal water-based screen inks over a crisp chalk-white Supima jersey body. Engineered for soft hand-feel with zero plastic cracking.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/tee_vintage_chalk_1795015673960.jpg",
+          "label": "Front Gallery View",
+          "caption": "Multi-pass vermilion & charcoal abstract graphic on Chalk White."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Screen Ink Detail",
+          "caption": "Hand-pulled soft-hand water-based ink penetration."
+        },
+        {
+          "url": "/src/assets/images/hero_tshirt_studio_1795015673323.jpg",
+          "label": "On-Model Drape",
+          "caption": "Tailored shoulder width with clean straight hem."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Chalk White",
+          "hex": "#F3F2EE",
+          "textOnHex": "#09090B"
+        },
+        {
+          "name": "Warm Travertine",
+          "hex": "#D6CFC2",
+          "textOnHex": "#09090B"
+        },
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        }
+      ],
+      "stock": {
+        "S": 12,
+        "M": 7,
+        "L": 19,
+        "XL": 11,
+        "2XL": 5
+      },
+      "reorderPoint": 8,
+      "reorderQuantity": 20,
+      "autoRestock": true,
+      "customizable": true,
+      "printMethodDefault": "Multi-Layer Water-Based Screen",
+      "specs": [
+        {
+          "label": "Fabric Composition",
+          "value": "100% American Supima Cotton"
+        },
+        {
+          "label": "Weight",
+          "value": "260 GSM / 7.7 oz Mid-Heavy"
+        },
+        {
+          "label": "Print Feel",
+          "value": "Zero-Hand Breathable Pigment"
+        },
+        {
+          "label": "Origin",
+          "value": "Printed & Cured in Studio"
+        }
+      ]
+    },
+    {
+      "id": "tee-olive-collective",
+      "sku": "KP-OLV-300",
+      "name": "300 GSM Washed Oversized Tee",
+      "category": "Oversized",
+      "fabricWeight": "300 GSM Garment-Dyed",
+      "fit": "Oversized Street Cut",
+      "price": 58,
+      "description": "Our heaviest blank. Garment-dyed in small mineral batches for a rich washed olive patina, featuring elongated sleeves, wide chest proportion, and reinforced shoulder taping.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/tee_olive_oversized_1795015674006.jpg",
+          "label": "Front Studio Shot",
+          "caption": "Mineral garment-dyed Washed Olive with cream emblem chest print."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Print Studio Process",
+          "caption": "High-opacity cream discharge ink on dyed heavyweight jersey."
+        },
+        {
+          "url": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+          "label": "Silhouette Reference",
+          "caption": "Wide boxy hem and generous sleeve proportion."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Washed Olive",
+          "hex": "#68735B",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Warm Travertine",
+          "hex": "#D6CFC2",
+          "textOnHex": "#09090B"
+        }
+      ],
+      "stock": {
+        "S": 15,
+        "M": 21,
+        "L": 4,
+        "XL": 14,
+        "2XL": 8
+      },
+      "reorderPoint": 6,
+      "reorderQuantity": 20,
+      "autoRestock": true,
+      "customizable": true,
+      "printMethodDefault": "Discharge + High-Opacity Print",
+      "specs": [
+        {
+          "label": "Fabric Composition",
+          "value": "100% Heavyweight Carded Cotton"
+        },
+        {
+          "label": "Weight",
+          "value": "300 GSM / 8.8 oz Ultra-Heavy"
+        },
+        {
+          "label": "Dye Process",
+          "value": "Mineral Pigment Garment Wash"
+        },
+        {
+          "label": "Stitching",
+          "value": "Single-Stitch Vintage Hem Detail"
+        }
+      ]
+    },
+    {
+      "id": "tee-custom-blank-pro",
+      "sku": "KP-BLK-280",
+      "name": "Atelier Custom Print Blank (Pro)",
+      "category": "Custom Blanks",
+      "fabricWeight": "280 GSM High-Density Jersey",
+      "fit": "Universal Boxy",
+      "price": 38,
+      "description": "Specifically engineered smooth-surface jersey for creators and brands uploading custom artwork. High-density combed yarns eliminate surface fuzz so fine lines and gradients print razor-sharp.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/tee_vintage_chalk_1795015673960.jpg",
+          "label": "Custom Print Canvas",
+          "caption": "Smooth combed surface optimized for 1200 DPI custom artwork."
+        },
+        {
+          "url": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+          "label": "Obsidian Colorway",
+          "caption": "Deep reactive-dyed black with white underbase support."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Press Calibration",
+          "caption": "Pre-treated & cured for 50+ wash cycle durability."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Chalk White",
+          "hex": "#F3F2EE",
+          "textOnHex": "#09090B"
+        },
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Washed Olive",
+          "hex": "#68735B",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Concrete Slate",
+          "hex": "#4B5058",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Studio Cobalt",
+          "hex": "#1E3A8A",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Warm Travertine",
+          "hex": "#D6CFC2",
+          "textOnHex": "#09090B"
+        }
+      ],
+      "stock": {
+        "S": 34,
+        "M": 42,
+        "L": 38,
+        "XL": 26,
+        "2XL": 18
+      },
+      "reorderPoint": 15,
+      "reorderQuantity": 40,
+      "autoRestock": true,
+      "customizable": true,
+      "printMethodDefault": "Custom DTG / Puff / Foil",
+      "specs": [
+        {
+          "label": "Printable Area",
+          "value": "Up to 14\" × 18\" Front & Back"
+        },
+        {
+          "label": "Weight",
+          "value": "280 GSM Tight-Knit Combed"
+        },
+        {
+          "label": "Tear-Away Tag",
+          "value": "Ready for Private Label"
+        },
+        {
+          "label": "Colorfastness",
+          "value": "ISO 105-C06 Grade 4.5"
+        }
+      ]
+    },
+    {
+      "id": "tee-metropolitan-drop",
+      "sku": "KP-MET-270",
+      "name": "Metropolitan Concrete Canyon Tee",
+      "category": "Graphic Drops",
+      "fabricWeight": "270 GSM Organic Cotton",
+      "fit": "Boxy Drop-Shoulder",
+      "price": 52,
+      "description": "Inspired by brutalist studio architecture. Features high-contrast duotone screen print graphics across the chest with subtle matte finish.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/hero_tshirt_studio_1795015673323.jpg",
+          "label": "Campaign Lookbook",
+          "caption": "Styled in Concrete Slate & Chalk White."
+        },
+        {
+          "url": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+          "label": "Studio Flat View",
+          "caption": "Precision duotone chest placement."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Craftsmanship Detail",
+          "caption": "Cured under dual infrared tunnels for crisp edge definition."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Concrete Slate",
+          "hex": "#4B5058",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Chalk White",
+          "hex": "#F3F2EE",
+          "textOnHex": "#09090B"
+        }
+      ],
+      "stock": {
+        "S": 9,
+        "M": 16,
+        "L": 12,
+        "XL": 3,
+        "2XL": 7
+      },
+      "reorderPoint": 6,
+      "reorderQuantity": 20,
+      "autoRestock": false,
+      "customizable": true,
+      "printMethodDefault": "Duotone High-Build Screen",
+      "specs": [
+        {
+          "label": "Fabric Composition",
+          "value": "100% GOTS Organic Cotton"
+        },
+        {
+          "label": "Weight",
+          "value": "270 GSM / 8.0 oz"
+        },
+        {
+          "label": "Edition",
+          "value": "Numbered Seasonal Run"
+        },
+        {
+          "label": "Neckline",
+          "value": "Bound Crew Collar"
+        }
+      ]
+    },
+    {
+      "id": "tee-supima-essential",
+      "sku": "KP-SUP-220",
+      "name": "220 GSM Supima Custom Essential",
+      "category": "Custom Blanks",
+      "fabricWeight": "220 GSM Long-Staple Supima",
+      "fit": "Tailored Everyday",
+      "price": 34,
+      "description": "Silky long-staple Supima cotton ideal for lightweight custom prints, subtle left-chest emblems, and multi-pack studio runs.",
+      "gallery": [
+        {
+          "url": "/src/assets/images/tee_olive_oversized_1795015674006.jpg",
+          "label": "Stone & Olive Finish",
+          "caption": "Clean chest placement over fine-gauge Supima knit."
+        },
+        {
+          "url": "/src/assets/images/tee_vintage_chalk_1795015673960.jpg",
+          "label": "Chalk White Canvas",
+          "caption": "Luminous optical white base for vibrant full-color DTG."
+        },
+        {
+          "url": "/src/assets/images/atelier_dtg_craft_1795015675385.jpg",
+          "label": "Atelier Ink Application",
+          "caption": "Micro-droplet print adhesion on smooth long-staple cotton."
+        }
+      ],
+      "colors": [
+        {
+          "name": "Chalk White",
+          "hex": "#F3F2EE",
+          "textOnHex": "#09090B"
+        },
+        {
+          "name": "Obsidian Black",
+          "hex": "#141416",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Studio Cobalt",
+          "hex": "#1E3A8A",
+          "textOnHex": "#FAFAFA"
+        },
+        {
+          "name": "Washed Olive",
+          "hex": "#68735B",
+          "textOnHex": "#FAFAFA"
+        }
+      ],
+      "stock": {
+        "S": 28,
+        "M": 35,
+        "L": 31,
+        "XL": 22,
+        "2XL": 14
+      },
+      "reorderPoint": 12,
+      "reorderQuantity": 35,
+      "autoRestock": true,
+      "customizable": true,
+      "printMethodDefault": "1200 DPI DTG Full-Color",
+      "specs": [
+        {
+          "label": "Fabric Composition",
+          "value": "100% Extra-Long Staple Supima"
+        },
+        {
+          "label": "Weight",
+          "value": "220 GSM / 6.5 oz All-Season"
+        },
+        {
+          "label": "Seams",
+          "value": "Side-Seamed Zero-Torque Construction"
+        },
+        {
+          "label": "Care",
+          "value": "Cold Wash Inside Out"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1042",
+      "trackingCode": "KP-2026-1042",
+      "carrierTracking": "UPS-1Z999AA101928374",
+      "createdAt": "2026-11-17T05:33:06.499Z",
+      "estimatedDelivery": "Nov 20, 2026",
+      "status": "printing",
+      "timeline": [
+        {
+          "status": "confirmed",
+          "title": "Order Confirmed",
+          "detail": "Payment authorized and inventory reserved for 2 garments.",
+          "timestamp": "2026-11-17T05:33:06.558Z"
+        },
+        {
+          "status": "prepress",
+          "title": "Pre-Press Verification",
+          "detail": "Custom 300 DPI PNG artwork color-profiled and pre-treated.",
+          "timestamp": "2026-11-17T17:33:06.558Z"
+        },
+        {
+          "status": "printing",
+          "title": "DTG Printing",
+          "detail": "Currently in Studio Press Bay #3 for dual-pass curing.",
+          "timestamp": "2026-11-18T11:33:06.558Z"
+        }
+      ],
+      "customer": {
+        "name": "Maya Lin-Vance",
+        "email": "maya.vance@studio-client.com",
+        "phone": "+1 (415) 555-0192",
+        "address": "418 Valencia Street, Apt 4B",
+        "city": "San Francisco",
+        "state": "CA",
+        "postalCode": "94103"
+      },
+      "paymentMethod": "card",
+      "paymentLast4": "4242",
+      "shippingMethod": "express",
+      "items": [
+        {
+          "cartItemId": "seed-item-1",
+          "type": "custom",
+          "productId": "tee-custom-blank-pro",
+          "sku": "KP-BLK-280",
+          "name": "Custom Atelier Tee — Studio Crest",
+          "colorName": "Obsidian Black",
+          "colorHex": "#141416",
+          "size": "L",
+          "quantity": 2,
+          "unitPrice": 46,
+          "thumbnailUrl": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+          "customSummary": "Front Center · High-Build Puff Print · 280 GSM"
+        }
+      ],
+      "subtotal": 92,
+      "discount": 0,
+      "shippingCost": 14,
+      "tax": 7.36,
+      "total": 113.36
+    },
+    {
+      "id": "ord-1089",
+      "trackingCode": "KP-2026-1089",
+      "carrierTracking": "FDX-774920184920",
+      "createdAt": "2026-11-15T01:33:06.558Z",
+      "estimatedDelivery": "Nov 19, 2026",
+      "status": "shipped",
+      "timeline": [
+        {
+          "status": "confirmed",
+          "title": "Order Confirmed",
+          "detail": "Order received and SKU inventory deducted automatically.",
+          "timestamp": "2026-11-15T01:33:06.558Z"
+        },
+        {
+          "status": "prepress",
+          "title": "Pre-Press Verification",
+          "detail": "Garment batch pulled and inspected.",
+          "timestamp": "2026-11-15T13:33:06.558Z"
+        },
+        {
+          "status": "printing",
+          "title": "DTG Printing",
+          "detail": "Water-based inks printed and infrared tunnel cured.",
+          "timestamp": "2026-11-16T11:33:06.558Z"
+        },
+        {
+          "status": "quality_check",
+          "title": "Quality Inspection",
+          "detail": "Passed color registration and stitch tolerance check.",
+          "timestamp": "2026-11-17T03:33:06.558Z"
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped & In Transit",
+          "detail": "Dispatched via FedEx Express from Portland Print Hub.",
+          "timestamp": "2026-11-17T21:33:06.558Z"
+        }
+      ],
+      "customer": {
+        "name": "Marcus Thorne",
+        "email": "m.thorne@arch-works.io",
+        "phone": "+1 (212) 555-0148",
+        "address": "89 Crosby Street, Floor 3",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10012"
+      },
+      "paymentMethod": "express_wallet",
+      "shippingMethod": "standard",
+      "items": [
+        {
+          "cartItemId": "seed-item-2",
+          "type": "catalog",
+          "productId": "tee-abstract-chalk",
+          "sku": "KP-ABS-260",
+          "name": "Abstract Form Studio Tee",
+          "colorName": "Chalk White",
+          "colorHex": "#F3F2EE",
+          "size": "M",
+          "quantity": 1,
+          "unitPrice": 54,
+          "thumbnailUrl": "/src/assets/images/tee_vintage_chalk_1795015673960.jpg"
+        }
+      ],
+      "subtotal": 54,
+      "discount": 0,
+      "shippingCost": 8,
+      "tax": 4.32,
+      "total": 66.32
+    },
+    {
+      "id": "ord-1015",
+      "trackingCode": "KP-2026-1015",
+      "carrierTracking": "UPS-1Z8842091234",
+      "createdAt": "2026-11-11T16:01:49.440Z",
+      "estimatedDelivery": "Delivered",
+      "status": "delivered",
+      "timeline": [
+        {
+          "status": "confirmed",
+          "title": "Order Confirmed",
+          "detail": "Order authorized and 280 GSM Boxy blanks allocated.",
+          "timestamp": "2026-11-11T16:01:49.440Z"
+        },
+        {
+          "status": "prepress",
+          "title": "Pre-Press Verification",
+          "detail": "Artwork resolution checked at 1200 DPI and color-calibrated.",
+          "timestamp": "2026-11-12T04:01:49.440Z"
+        },
+        {
+          "status": "printing",
+          "title": "DTG Printing",
+          "detail": "Printed in Studio Press Bay #1 and tunnel cured.",
+          "timestamp": "2026-11-12T20:01:49.440Z"
+        },
+        {
+          "status": "quality_check",
+          "title": "Quality Inspection",
+          "detail": "Passed stitch, garment dimensions, and washfastness check.",
+          "timestamp": "2026-11-13T08:01:49.440Z"
+        },
+        {
+          "status": "shipped",
+          "title": "Shipped & In Transit",
+          "detail": "Dispatched via UPS Ground from Portland Print Studio.",
+          "timestamp": "2026-11-14T00:01:49.440Z"
+        },
+        {
+          "status": "delivered",
+          "title": "Delivered",
+          "detail": "Delivered and signed at front porch (Portland, OR 97205).",
+          "timestamp": "2026-11-16T22:01:49.440Z"
+        }
+      ],
+      "customer": {
+        "name": "Elena Rostova",
+        "email": "elena.rostova@designmail.com",
+        "phone": "+1 (503) 555-0164",
+        "address": "1120 SW Alder St, Suite 204",
+        "city": "Portland",
+        "state": "OR",
+        "postalCode": "97205"
+      },
+      "paymentMethod": "card",
+      "paymentLast4": "8819",
+      "shippingMethod": "standard",
+      "items": [
+        {
+          "cartItemId": "seed-item-3",
+          "type": "catalog",
+          "productId": "tee-boxy-obsidian",
+          "sku": "KP-BXY-280",
+          "name": "280 GSM Boxy Architectural Tee",
+          "colorName": "Obsidian Black",
+          "colorHex": "#141416",
+          "size": "M",
+          "quantity": 2,
+          "unitPrice": 48,
+          "thumbnailUrl": "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg"
+        }
+      ],
+      "subtotal": 96,
+      "discount": 0,
+      "shippingCost": 0,
+      "tax": 7.68,
+      "total": 103.68
+    }
+  ],
+  "inventoryLogs": [
+    {
+      "id": "log-seed-1",
+      "timestamp": "2026-11-17T05:33:06.558Z",
+      "productId": "tee-custom-blank-pro",
+      "sku": "KP-BLK-280",
+      "productName": "Atelier Custom Print Blank (Pro)",
+      "size": "L",
+      "delta": -2,
+      "newStock": 38,
+      "reason": "order_deduction",
+      "note": "Auto-deducted for Order KP-2026-1042"
+    },
+    {
+      "id": "log-seed-2",
+      "timestamp": "2026-11-17T19:33:06.558Z",
+      "productId": "tee-olive-oversized",
+      "sku": "KP-OLV-300",
+      "productName": "300 GSM Washed Oversized Tee",
+      "size": "L",
+      "delta": 0,
+      "newStock": 4,
+      "reason": "low_stock_alert",
+      "note": "Size L dropped below reorder threshold (6 units)"
+    },
+    {
+      "id": "log-seed-3",
+      "timestamp": "2026-11-18T03:33:06.558Z",
+      "productId": "tee-boxy-obsidian",
+      "sku": "KP-BXY-280",
+      "productName": "280 GSM Boxy Architectural Tee",
+      "size": "XL",
+      "delta": 0,
+      "newStock": 6,
+      "reason": "low_stock_alert",
+      "note": "Size XL dropped below reorder threshold (8 units)"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "productId": "tee-boxy-obsidian",
+      "productName": "280 GSM Boxy Architectural Tee",
+      "authorName": "Elena Rostova",
+      "rating": 5,
+      "title": "Heavy collar and razor-sharp white linework",
+      "comment": "Ordered two for our architecture studio team. The 280 GSM cotton holds its boxy drape all day and the white print did not fade or crack after three washes.",
+      "images": [
+        "/src/assets/images/tee_heavyweight_obsidian_1795015673701.jpg",
+        "/src/assets/images/atelier_dtg_craft_1795015675385.jpg"
+      ],
+      "verifiedPurchase": true,
+      "createdAt": "2026-11-17T12:01:49.440Z"
+    },
+    {
+      "id": "rev-2",
+      "productId": "tee-abstract-chalk",
+      "productName": "Abstract Form Studio Tee",
+      "authorName": "Marcus Thorne",
+      "rating": 5,
+      "title": "Zero plastic feel on the print",
+      "comment": "The vermilion water-based ink blends directly into the Supima cotton fibers. Super breathable and crisp gallery look.",
+      "images": [
+        "/src/assets/images/tee_vintage_chalk_1795015673960.jpg"
+      ],
+      "verifiedPurchase": true,
+      "createdAt": "2026-11-16T02:01:49.440Z"
+    },
+    {
+      "id": "rev-3",
+      "productId": "tee-custom-blank-pro",
+      "productName": "Atelier Custom Print Blank (Pro)",
+      "authorName": "Maya Lin-Vance",
+      "rating": 5,
+      "title": "Uploaded my own PNG and the puff print turned out unreal",
+      "comment": "Used the Custom Studio to upload a transparent PNG crest on the front chest. Placement matched the live preview to the millimeter.",
+      "images": [
+        "/src/assets/images/hero_tshirt_studio_1795015673323.jpg"
+      ],
+      "verifiedPurchase": true,
+      "createdAt": "2026-11-14T17:01:49.440Z"
+    },
+    {
+      "id": "rev-4",
+      "productId": "tee-olive-oversized",
+      "productName": "300 GSM Washed Oversized Tee",
+      "authorName": "Devon Sato",
+      "rating": 4,
+      "title": "Substantial 300 GSM weight and mineral wash tone",
+      "comment": "Proper heavyweight drape with vintage single-stitch hem detail. Runs generously oversized as described—size down if you prefer a standard fit.",
+      "images": [
+        "/src/assets/images/tee_olive_oversized_1795015674006.jpg"
+      ],
+      "verifiedPurchase": true,
+      "createdAt": "2026-11-13T16:01:49.440Z"
+    }
+  ]
+}

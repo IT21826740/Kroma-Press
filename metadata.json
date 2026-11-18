@@ -1,0 +1,6 @@
+{
+  "name": "Kroma Press — Custom T-Shirt Print Studio",
+  "description": "Modern e-commerce storefront for custom-designed and studio-printed heavyweight T-shirts with live artwork upload, automated inventory management, and real-time order tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
